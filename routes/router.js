@@ -3,7 +3,7 @@ const router = express.Router();
 ;
 const axios = require("axios");
 const facebookLib = require("../lib/facebook");
-const googleLib = require("../lib/google");
+const instagramLib = require("../lib/instagram");
 router.get("/api", async (req, res) => {
   try {
     res.status(200).json({ message: "Welcom to the Cinclal San Miguel" });
@@ -16,8 +16,8 @@ function getLibraryForPlatform(platform) {
   switch (platform) {
     case "facebook":
       return facebookLib;
-    case "google":
-      return googleLib;
+    case "instagram":
+      return instagramLib;
     default:
       return null;
   }
